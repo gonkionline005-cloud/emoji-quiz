@@ -22,15 +22,12 @@ movies = basics[basics["titleType"] == "movie"]
 print("Всего записей в basics:", len(basics), "| из них фильмов:", len(movies))
 
 # --- ШАГ 3. Находим код каждого фильма ---
-# merge склеивает две таблицы по совпадающим значениям. Здесь — по названию:
-# слева наше английское название title_en, справа primaryTitle из IMDb.
-# how="inner" — оставить только те строки, что нашлись в обеих таблицах.
-merged = emoji.merge(
-    movies, left_on="title_en", right_on="primaryTitle", how="inner"
-)
-# У одного названия может найтись несколько фильмов (ремейки, тёзки). Берём первый.
-merged = merged.drop_duplicates(subset="title_en")
-print("Нашли код для фильмов:", len(merged))
+emoji["key"] = emoji["title_en"].str.lower().str.strip()
+movies = movies.copy()
+movies["key"] = movies["primaryTitle"].str.lower().str.strip()
+merged = emoji.merge(movies, on="key", how="inner")
+merged = merged.drop_duplicates(subset="title_en")  # без этой строки полезут дубли-тёзки
+
 
 # --- ШАГ 4. IMDb akas: русские названия ---
 # Этот файл огромный (~3 ГБ, ~58 млн строк), целиком в память он может не влезть.
