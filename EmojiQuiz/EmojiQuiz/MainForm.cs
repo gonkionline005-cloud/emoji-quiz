@@ -5,6 +5,8 @@ public partial class MainForm : Form
     public MainForm()
     {
         InitializeComponent();
+            var q = Db.GetRandom();
+            if (q != null) labelEmoji.Text = q.Emoji;
     }
 
     private void buttonPlay_Click(object sender, EventArgs e)

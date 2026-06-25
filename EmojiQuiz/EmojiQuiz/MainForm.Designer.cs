@@ -31,11 +31,12 @@ partial class MainForm
     {
         buttonPlay = new System.Windows.Forms.Button();
         buttonAdmin = new System.Windows.Forms.Button();
+        labelEmoji = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // buttonPlay
         // 
-        buttonPlay.Location = new System.Drawing.Point(98, 74);
+        buttonPlay.Location = new System.Drawing.Point(98, 135);
         buttonPlay.Name = "buttonPlay";
         buttonPlay.Size = new System.Drawing.Size(215, 45);
         buttonPlay.TabIndex = 0;
@@ -45,7 +46,7 @@ partial class MainForm
         // 
         // buttonAdmin
         // 
-        buttonAdmin.Location = new System.Drawing.Point(98, 185);
+        buttonAdmin.Location = new System.Drawing.Point(98, 209);
         buttonAdmin.Name = "buttonAdmin";
         buttonAdmin.Size = new System.Drawing.Size(215, 46);
         buttonAdmin.TabIndex = 1;
@@ -53,16 +54,28 @@ partial class MainForm
         buttonAdmin.UseVisualStyleBackColor = true;
         buttonAdmin.Click += buttonAdmin_Click;
         // 
+        // labelEmoji
+        // 
+        labelEmoji.Font = new System.Drawing.Font("Segoe UI Emoji", 36F);
+        labelEmoji.Location = new System.Drawing.Point(91, 47);
+        labelEmoji.Name = "labelEmoji";
+        labelEmoji.Size = new System.Drawing.Size(221, 48);
+        labelEmoji.TabIndex = 2;
+        labelEmoji.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(400, 307);
+        Controls.Add(labelEmoji);
         Controls.Add(buttonAdmin);
         Controls.Add(buttonPlay);
         Text = "Form1";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Label labelEmoji;
 
     private System.Windows.Forms.Button buttonPlay;
     private System.Windows.Forms.Button buttonAdmin;
