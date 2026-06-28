@@ -5,6 +5,7 @@ public partial class GameForm : Form
     static readonly Random rng = new();
     Question? current;
     int score = 0;
+    int total = 0;
     int timeLeft = 15;
     string category = "";
     
@@ -49,7 +50,7 @@ public partial class GameForm : Form
     void CheckAnswer(string chosen)
     {
         if (current == null) return;
-
+        total++;
         if (chosen == current.Answer)
         {
             score++;
@@ -83,6 +84,13 @@ public partial class GameForm : Form
         }
     }
 
+    private void buttonFinish_Click(object sender, EventArgs e)
+    {
+        timer1.Stop();
+        new ResultForm(score, total).ShowDialog();
+        Close();
+    }
+
     private void button1_Click(object sender, EventArgs e)
     {
         CheckAnswer(button1.Text);
@@ -102,5 +110,4 @@ public partial class GameForm : Form
     {
         CheckAnswer(button4.Text);
     }
-    
 }

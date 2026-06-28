@@ -41,6 +41,7 @@ partial class GameForm
         labelResult = new System.Windows.Forms.Label();
         timer1 = new System.Windows.Forms.Timer(components);
         labelTimer = new System.Windows.Forms.Label();
+        buttonFinish = new System.Windows.Forms.Button();
         SuspendLayout();
         // 
         // button1
@@ -120,11 +121,22 @@ partial class GameForm
         labelTimer.TabIndex = 7;
         labelTimer.Text = "label1";
         // 
+        // buttonFinish
+        // 
+        buttonFinish.Location = new System.Drawing.Point(416, 367);
+        buttonFinish.Name = "buttonFinish";
+        buttonFinish.Size = new System.Drawing.Size(136, 34);
+        buttonFinish.TabIndex = 8;
+        buttonFinish.Text = "Завершить";
+        buttonFinish.UseVisualStyleBackColor = true;
+        buttonFinish.Click += buttonFinish_Click;
+        // 
         // GameForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(564, 378);
+        ClientSize = new System.Drawing.Size(564, 413);
+        Controls.Add(buttonFinish);
         Controls.Add(labelTimer);
         Controls.Add(labelResult);
         Controls.Add(labelScore);
@@ -136,6 +148,8 @@ partial class GameForm
         Text = "GameForm";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Button buttonFinish;
 
     private System.Windows.Forms.Label labelTimer;
 
