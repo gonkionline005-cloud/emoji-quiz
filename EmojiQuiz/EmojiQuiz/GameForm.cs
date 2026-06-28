@@ -5,17 +5,23 @@ public partial class GameForm : Form
     static readonly Random rng = new();
     Question? current;
     int score = 0;
+    int timeLeft = 15;
     string category = "";
     
     public GameForm(string cat = "")
     {
         InitializeComponent();
         category = cat;
+        timer1.Interval = 1000;
+        timer1.Start();
         NextQuestion();
     }
     
     void NextQuestion()
     {
+        timeLeft = 15;
+        labelTimer.Text = "Время: 15";
+        
         current = Db.GetRandom(category);
         if (current == null) { labelEmoji.Text = "База пуста"; return; }
 
@@ -39,7 +45,6 @@ public partial class GameForm : Form
             }
         }
     }
-
 
     void CheckAnswer(string chosen)
     {
@@ -66,6 +71,17 @@ public partial class GameForm : Form
             (list[i], list[j]) = (list[j], list[i]);
         }
     }
+    
+    private void timer1_Tick(object sender, EventArgs e)
+    {
+        timeLeft--;
+        labelTimer.Text = "Время: " + timeLeft;
+        if (timeLeft <= 0)
+        {
+            labelResult.Text = "Время вышло!";
+            NextQuestion();
+        }
+    }
 
     private void button1_Click(object sender, EventArgs e)
     {
@@ -86,4 +102,5 @@ public partial class GameForm : Form
     {
         CheckAnswer(button4.Text);
     }
+    
 }

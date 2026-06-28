@@ -31,6 +31,7 @@ partial class GameForm
     /// </summary>
     private void InitializeComponent()
     {
+        components = new System.ComponentModel.Container();
         button1 = new System.Windows.Forms.Button();
         button2 = new System.Windows.Forms.Button();
         button3 = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@ partial class GameForm
         labelEmoji = new System.Windows.Forms.Label();
         labelScore = new System.Windows.Forms.Label();
         labelResult = new System.Windows.Forms.Label();
+        timer1 = new System.Windows.Forms.Timer(components);
+        labelTimer = new System.Windows.Forms.Label();
         SuspendLayout();
         // 
         // button1
@@ -99,16 +102,30 @@ partial class GameForm
         // 
         // labelResult
         // 
-        labelResult.Location = new System.Drawing.Point(303, 149);
+        labelResult.Location = new System.Drawing.Point(325, 150);
         labelResult.Name = "labelResult";
         labelResult.Size = new System.Drawing.Size(171, 29);
         labelResult.TabIndex = 6;
+        // 
+        // timer1
+        // 
+        timer1.Interval = 1000;
+        timer1.Tick += timer1_Tick;
+        // 
+        // labelTimer
+        // 
+        labelTimer.Location = new System.Drawing.Point(67, 190);
+        labelTimer.Name = "labelTimer";
+        labelTimer.Size = new System.Drawing.Size(236, 23);
+        labelTimer.TabIndex = 7;
+        labelTimer.Text = "label1";
         // 
         // GameForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(564, 378);
+        Controls.Add(labelTimer);
         Controls.Add(labelResult);
         Controls.Add(labelScore);
         Controls.Add(labelEmoji);
@@ -119,6 +136,10 @@ partial class GameForm
         Text = "GameForm";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.Label labelTimer;
+
+    private System.Windows.Forms.Timer timer1;
 
     private System.Windows.Forms.Label labelResult;
 
