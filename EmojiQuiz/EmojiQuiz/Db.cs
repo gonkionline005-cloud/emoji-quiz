@@ -15,6 +15,13 @@ static class Db
         using var ctx = new QuizContext();
         return ctx.Questions.Count();
     }
+    
+    public static bool Exists(string answer)
+    {
+        using var ctx = new QuizContext();
+        return ctx.Questions.Any(q => q.Answer == answer);
+    }
+
 
     public static void Add(string emoji, string answer, string category)
     {
@@ -23,24 +30,25 @@ static class Db
         ctx.SaveChanges();
     }
 
-    public static Question? GetRandom()
+    public static Question? GetRandom(string cat = "")
     {
         using var ctx = new QuizContext();
-        return ctx.Questions
-            .OrderBy(q => EF.Functions.Random())
-            .FirstOrDefault();
+        var q = ctx.Questions.AsQueryable();
+        if (cat != "") q = q.Where(x => x.Category == cat);
+        return q.OrderBy(x => EF.Functions.Random()).FirstOrDefault();
     }
 
-    public static List<string> GetWrongAnswers(string correct, int count)
+    public static List<string> GetWrongAnswers(string correct, int count, string cat = "")
     {
         using var ctx = new QuizContext();
-        return ctx.Questions
-            .Where(q => q.Answer != correct)
-            .OrderBy(q => EF.Functions.Random())
-            .Select(q => q.Answer)
+        var q = ctx.Questions.Where(x => x.Answer != correct);
+        if (cat != "") q = q.Where(x => x.Category == cat);
+        return q.OrderBy(x => EF.Functions.Random())
+            .Select(x => x.Answer)
             .Take(count)
             .ToList();
     }
+
 
     public static void SeedFromFile(string path)
     {

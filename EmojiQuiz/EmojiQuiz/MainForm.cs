@@ -10,7 +10,9 @@ public partial class MainForm : Form
 
     private void buttonPlay_Click(object sender, EventArgs e)
     {
-        new GameForm().Show();
+        string cat = comboCategory.SelectedItem?.ToString() ?? "";
+        new GameForm(cat).Show();
+
     }
 
     private void buttonAdmin_Click(object sender, EventArgs e)

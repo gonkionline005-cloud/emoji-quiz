@@ -31,6 +31,7 @@ partial class MainForm
     {
         buttonPlay = new System.Windows.Forms.Button();
         buttonAdmin = new System.Windows.Forms.Button();
+        comboCategory = new System.Windows.Forms.ComboBox();
         SuspendLayout();
         // 
         // buttonPlay
@@ -53,16 +54,28 @@ partial class MainForm
         buttonAdmin.UseVisualStyleBackColor = true;
         buttonAdmin.Click += buttonAdmin_Click;
         // 
+        // comboCategory
+        // 
+        comboCategory.FormattingEnabled = true;
+        comboCategory.Items.AddRange(new object[] { "Фильмы", "Сериалы", "Бренды" });
+        comboCategory.Location = new System.Drawing.Point(98, 83);
+        comboCategory.Name = "comboCategory";
+        comboCategory.Size = new System.Drawing.Size(213, 23);
+        comboCategory.TabIndex = 2;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(400, 307);
+        Controls.Add(comboCategory);
         Controls.Add(buttonAdmin);
         Controls.Add(buttonPlay);
         Text = "Form1";
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.ComboBox comboCategory;
 
     private System.Windows.Forms.Button buttonPlay;
     private System.Windows.Forms.Button buttonAdmin;

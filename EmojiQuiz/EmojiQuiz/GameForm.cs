@@ -5,21 +5,23 @@ public partial class GameForm : Form
     static readonly Random rng = new();
     Question? current;
     int score = 0;
+    string category = "";
     
-    public GameForm()
+    public GameForm(string cat = "")
     {
         InitializeComponent();
+        category = cat;
         NextQuestion();
     }
     
     void NextQuestion()
     {
-        current = Db.GetRandom();
+        current = Db.GetRandom(category);
         if (current == null) { labelEmoji.Text = "База пуста"; return; }
 
         labelEmoji.Text = current.Emoji;
 
-        var options = Db.GetWrongAnswers(current.Answer, 3);
+        var options = Db.GetWrongAnswers(current.Answer, 3, category);
         options.Add(current.Answer);
         Shuffle(options);
 
@@ -37,6 +39,7 @@ public partial class GameForm : Form
             }
         }
     }
+
 
     void CheckAnswer(string chosen)
     {
