@@ -56,7 +56,9 @@ static class Db
         foreach (var line in File.ReadLines(path).Skip(1))
         {
             var parts = line.Split('\t');
-            if (parts.Length >= 3)
+            if (parts.Length >= 4)
+                Add(parts[2], parts[1], parts[3]);
+            else if (parts.Length >= 3)
                 Add(parts[2], parts[1], "Фильмы");
         }
     }
