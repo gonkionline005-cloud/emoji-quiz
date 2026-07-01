@@ -24,4 +24,10 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="movies_ru_emoji.tsv">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
