@@ -79,7 +79,8 @@ public partial class GameForm : Form
         labelTimer.Text = "Время: " + timeLeft;
         if (timeLeft <= 0)
         {
-            labelResult.Text = "Время вышло!";
+            total++;
+            labelResult.Text = "Время вышло! Это " + current?.Answer;
             NextQuestion();
         }
     }

@@ -37,16 +37,16 @@ partial class ResultForm
         // 
         // labelResult
         // 
-        labelResult.Location = new System.Drawing.Point(79, 34);
+        labelResult.Location = new System.Drawing.Point(52, 25);
         labelResult.Name = "labelResult";
-        labelResult.Size = new System.Drawing.Size(267, 53);
+        labelResult.Size = new System.Drawing.Size(227, 51);
         labelResult.TabIndex = 0;
         // 
         // buttonBack
         // 
-        buttonBack.Location = new System.Drawing.Point(97, 157);
+        buttonBack.Location = new System.Drawing.Point(78, 94);
         buttonBack.Name = "buttonBack";
-        buttonBack.Size = new System.Drawing.Size(229, 53);
+        buttonBack.Size = new System.Drawing.Size(161, 41);
         buttonBack.TabIndex = 1;
         buttonBack.Text = "В меню";
         buttonBack.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@ partial class ResultForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(420, 262);
+        ClientSize = new System.Drawing.Size(304, 147);
         Controls.Add(buttonBack);
         Controls.Add(labelResult);
         Text = "ResultForm";

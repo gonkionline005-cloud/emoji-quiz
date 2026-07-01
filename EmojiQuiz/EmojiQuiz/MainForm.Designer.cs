@@ -36,7 +36,7 @@ partial class MainForm
         // 
         // buttonPlay
         // 
-        buttonPlay.Location = new System.Drawing.Point(98, 135);
+        buttonPlay.Location = new System.Drawing.Point(67, 84);
         buttonPlay.Name = "buttonPlay";
         buttonPlay.Size = new System.Drawing.Size(215, 45);
         buttonPlay.TabIndex = 0;
@@ -46,7 +46,7 @@ partial class MainForm
         // 
         // buttonAdmin
         // 
-        buttonAdmin.Location = new System.Drawing.Point(98, 209);
+        buttonAdmin.Location = new System.Drawing.Point(67, 154);
         buttonAdmin.Name = "buttonAdmin";
         buttonAdmin.Size = new System.Drawing.Size(215, 46);
         buttonAdmin.TabIndex = 1;
@@ -56,9 +56,10 @@ partial class MainForm
         // 
         // comboCategory
         // 
+        comboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         comboCategory.FormattingEnabled = true;
         comboCategory.Items.AddRange(new object[] { "Фильмы", "Сериалы", "Бренды" });
-        comboCategory.Location = new System.Drawing.Point(98, 83);
+        comboCategory.Location = new System.Drawing.Point(69, 33);
         comboCategory.Name = "comboCategory";
         comboCategory.Size = new System.Drawing.Size(213, 23);
         comboCategory.TabIndex = 2;
@@ -67,11 +68,11 @@ partial class MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(400, 307);
+        ClientSize = new System.Drawing.Size(359, 221);
         Controls.Add(comboCategory);
         Controls.Add(buttonAdmin);
         Controls.Add(buttonPlay);
-        Text = "Form1";
+        Text = "EmojiQuiz";
         ResumeLayout(false);
     }
 

@@ -46,7 +46,7 @@ partial class GameForm
         // 
         // button1
         // 
-        button1.Location = new System.Drawing.Point(65, 236);
+        button1.Location = new System.Drawing.Point(63, 182);
         button1.Name = "button1";
         button1.Size = new System.Drawing.Size(178, 42);
         button1.TabIndex = 0;
@@ -56,7 +56,7 @@ partial class GameForm
         // 
         // button2
         // 
-        button2.Location = new System.Drawing.Point(303, 236);
+        button2.Location = new System.Drawing.Point(304, 182);
         button2.Name = "button2";
         button2.Size = new System.Drawing.Size(173, 42);
         button2.TabIndex = 1;
@@ -66,7 +66,7 @@ partial class GameForm
         // 
         // button3
         // 
-        button3.Location = new System.Drawing.Point(65, 305);
+        button3.Location = new System.Drawing.Point(65, 249);
         button3.Name = "button3";
         button3.Size = new System.Drawing.Size(177, 45);
         button3.TabIndex = 2;
@@ -76,7 +76,7 @@ partial class GameForm
         // 
         // button4
         // 
-        button4.Location = new System.Drawing.Point(303, 305);
+        button4.Location = new System.Drawing.Point(305, 249);
         button4.Name = "button4";
         button4.Size = new System.Drawing.Size(172, 44);
         button4.TabIndex = 3;
@@ -95,7 +95,7 @@ partial class GameForm
         // 
         // labelScore
         // 
-        labelScore.Location = new System.Drawing.Point(63, 150);
+        labelScore.Location = new System.Drawing.Point(63, 124);
         labelScore.Name = "labelScore";
         labelScore.Size = new System.Drawing.Size(179, 29);
         labelScore.TabIndex = 5;
@@ -103,7 +103,7 @@ partial class GameForm
         // 
         // labelResult
         // 
-        labelResult.Location = new System.Drawing.Point(325, 150);
+        labelResult.Location = new System.Drawing.Point(328, 124);
         labelResult.Name = "labelResult";
         labelResult.Size = new System.Drawing.Size(171, 29);
         labelResult.TabIndex = 6;
@@ -115,7 +115,7 @@ partial class GameForm
         // 
         // labelTimer
         // 
-        labelTimer.Location = new System.Drawing.Point(67, 190);
+        labelTimer.Location = new System.Drawing.Point(65, 156);
         labelTimer.Name = "labelTimer";
         labelTimer.Size = new System.Drawing.Size(236, 23);
         labelTimer.TabIndex = 7;
@@ -123,7 +123,7 @@ partial class GameForm
         // 
         // buttonFinish
         // 
-        buttonFinish.Location = new System.Drawing.Point(416, 367);
+        buttonFinish.Location = new System.Drawing.Point(385, 310);
         buttonFinish.Name = "buttonFinish";
         buttonFinish.Size = new System.Drawing.Size(136, 34);
         buttonFinish.TabIndex = 8;
@@ -135,7 +135,7 @@ partial class GameForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(564, 413);
+        ClientSize = new System.Drawing.Size(533, 352);
         Controls.Add(buttonFinish);
         Controls.Add(labelTimer);
         Controls.Add(labelResult);
